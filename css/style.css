@@ -8181,3 +8181,34 @@ height: 11%;
     color: var(--color--clou-grey) !important;             /* Make the text inside white */
     border-color: var(--c-green-1) !important;
 }
+
+/* === ADD THIS CODE TO THE BOTTOM OF YOUR CSS FILE === */
+
+/* --- Hero Section Bottom-Rounded Edges --- */
+
+/* 1. This targets the main container for the hero section */
+.main-hero_section {
+    position: relative; 
+    overflow: hidden; /* CRITICAL: This clips the video to the container's shape */
+    
+    /* These properties round ONLY the bottom corners */
+    border-bottom-left-radius: 2.5rem; /* Adjust value for more/less curve */
+    border-bottom-right-radius: 2.5rem;
+}
+
+/* 2. This ensures the video and its overlay fill the newly shaped container */
+.hero-video-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Responsive Adjustments for Mobile --- */
+/* On smaller screens, we can reduce the roundness slightly */
+@media screen and (max-width: 767px) {
+    .main-hero_section {
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+    }
+}
